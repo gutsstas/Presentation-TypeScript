@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+          <section>
+              <img src="lib/TS.png" alt="Down arrow">
+          </section>
+          <section>
+            <h1>What is TypeScript?</h1>
+          </section>
+          
+          <section>
+            <p><strong>TypeScript</strong> is an open-source programming language developed and maintained by Microsoft.</p>
+            <img width="31%"src="lib/venn.png" alt="">
+            <p><strong>TypeScript</strong> offers us more control over our code via type annotations, interfaces, and classes.</p>
+          </section>
+
+          <section>
+            <h3>Typescript comes with some additional features:</h3><br>
+            <ul>
+              <li>Strong-typed variables</li><br>
+              <li>Object-oriented programming</li>
+            </ul>
+          </section>
+
+          <section>
+              <h3>Installing TypeScript</h3><br>
+              <p>There are two main ways to get the TypeScript tools:</p>
+              <ul>
+                <li>via npm (the Node.js package manager)</li>
+                <!-- <pre><code class="hljs" data-trim data-line-numbers="4,8-9">>npm install -g typescript</code></pre>
+                </pre> -->
+                <pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
+                  >npm install -g typescript
+                  >tsc -v</code></pre>
+                <li>by installing TypeScript’s Visual Studio plugins</li>
+              </ul>
+          </section>
+
+          <section>
+              <p>Typescript files have a <em>.ts</em> extension.</p>
+              <p>Browsers don’t understand Typescript code, so later it needs to get translated to Javascript.</p>
+              <pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">tsc yourFileName.ts</code></pre>
+              <img src="lib/TS-in-JS.png" alt="TS-in-JS">
+          </section>
+
+          <section>
+            <h3>Strong Typing</h3>
+            <pre><code class="hljs" data-trim data-line-numbers="1-9">
+              let name: string;       // for strings
+
+              let age: number;        // for any kind of numbers
+
+              let isChecked: boolean; // true or false
+
+              let data: any;          // can be changed later to any type
+
+              let array: number[];    // array of numbers</code></pre>
+            </pre>          
+          </section>
+
+          <section>
+              <h3>Class</h3>
+              <pre><code class="hljs" data-trim data-line-numbers="1-22">
+                class Feline {
+                  catchMice(numberOfMice: number) {
+                    console.log(`This fierce feline caught ${numberOfMice} mice.`);
+                  }
+                }
+                class Tiger extends Feline {
+                  rawr() {
+                    console.log('RAWRRR!');
+                  }
+                }
+
+                const tiger = new Tiger();
+                tiger.rawr();
+                tiger.catchMice(10);</code></pre>
+          </section>
+
+          <section>
+              <h3>Constructor</h3>
+              <pre><code class="hljs" data-trim data-line-numbers="1-22">
+                  class Student {
+                    firstName: String;
+                    lastName: String;
+
+                  constructor(firstName?: string, lastName?: string) {
+                      this.firstName = firstName;
+                      this.lastName = lastName;
+                    }
+
+                  getGrades() {      
+                      // some code
+                    }
+                  }</code></pre>
+          </section>
+
+          <section>
+              <h3>Access Modifiers</h3>
+              <p>There are 3 types of access modifiers:</p>
+              <ul>
+                <li>public — allows access from outside of a class</li>
+                <li>private — foesn’t allow access from outside of a class</li>
+                <li>protected — allows access only within a class and its derived classes</li>
+              </ul>
+              <pre><code class="hljs" data-trim data-line-numbers="1-22">
+                class Student {
+                  private firstName: String;
+                  private lastName: String;
+                constructor(firstName?: string, lastName?: string) {
+                    this.firstName = firstName;
+                    this.lastName = lastName;
+                  }
+                getGrades() {      
+                    // some code
+                  }
+                }</code></pre>
+          </section>
+
+          <section>
+            <h3>What else can TypeScript do?</h3>
+            <ul>
+              <li>In addition to displaying the errors at compile time, certain IDEs such as Visual Studio Code will present the errors to the developer while they are typing the code. This makes correcting simple careless errors much quicker and easier.</li>
+              <li>TypeScript can also infer types that aren’t explicitly declared by the developer, such as inferring the return value type of a function. If the function is adding two parameters that were declared as both <strong><em>number</em></strong>  , TypeScript will infer the return value must be of type <strong><em>number</em></strong>.</li>
+            </ul>
+        </section>
+
+          <section>
+            <img src="lib/Pros-and-Cons.png" alt="Pros-and-Cons">
+
+        </section>
+
+          <section>
+            <h3>TypeScript Pros</h3>
+            <img width="20%" src="lib/pros.jpg" alt="Pros">
+            <ul>
+              <li>rich IDE support with autocomplete and code navigation features;</li>
+              <li>safe automatic refactorings;</li>
+              <li>discoverable APIs and more self-explanatory code contracts (through type declarations);</li>
+              <li>typos caught at compilation time;</li>
+              <li>class-based OO, with inheritance, private members and interfaces;</li>
+              <li>module support;</li>
+              <li>existing JavaScript code interoperability:
+                <ul>
+                  <li>Compiles down to idiomatic JavaScript;</li>
+                  <li>Any JavaScript code is a valid TypeScript code;</li>
+                </ul>
+              </li>
+            </ul>
+        </section>
+
+        <section>
+          <h3>TypeScript Cons</h3>
+          <img width="20%" src="lib/Cons.png" alt="Pros">
+          <ul>
+            <li>in order to get the most out of the TypeScript, developers will need to use the type annotations everywhere in their code, which might at times be cumbersome (or perceived as such coming from a dynamic language background);</li>
+            <li>not all third-party libraries have ambient definitions available. The development team will have to write and maintain their own if they want to use a particular library and take advantage of TypeScript;</li>
+            <li>in order to run the application in the browser, a compile step is required to transform TypeScript into JavaScript;</li>
+          </ul>
+      </section>
+
+    </div>
+	</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
