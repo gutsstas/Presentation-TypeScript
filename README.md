@@ -24,7 +24,9 @@ Before we can use Typescript, we need to install it on our computer. There are t
 * Via npm (the Node.js package manager);
 This command will install Typescript globally so you can use it in any project. After the installation completed, you can verify it 
 * By installing TypeScript’s Visual Studio plugins.
+
 `(Slide - translates Typescript)`
+
 Typescript files have a .ts extension.
 Browsers don’t understand Typescript code, so later it needs to get translated to Javascript.
 
@@ -64,6 +66,7 @@ In Object-Oriented Programming, access modifiers are being used for restricting 
 * Protected — Allows access only within a class and its derived classes
 All members of a class are Public by default.
 So we can (and should) restrict access from outside by adding the privatekeyword to a class’s members.
+
 `(Slide - WHAT ELSE CAN TYPESCRIPT DO)`
 
 **WHAT ELSE CAN TYPESCRIPT DO?**
